@@ -1,4 +1,4 @@
-# https://pypi.org/project/weatherbug-spark/
+### https://pypi.org/project/weatherbug-spark/
 import asyncio
 import weatherbug_spark
 import json
@@ -25,6 +25,7 @@ class LightningStats:
         return ix
 
 async def main():
+    print("WeatherBug Lightning Collector")
     data = await weatherbug_spark.get_data(lat=-26.0577, lon=28.0252)
     stats = LightningStats(data.closestPulseDistance, data.closestPulseDirection, data.shortMessage)
 
